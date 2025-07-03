@@ -1,0 +1,55 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vw;
+  width: 100vw;
+  overflow: hidden;
+  /*border:1px solid red;*/
+  background-color: rgb(20, 20, 20);
+}
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  background-color: #0D6AE8;
+}
+canvas {
+  /* remove scrollbars */
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height:100vw;
+  width:100vw;
+  z-index:0;
+}
+
+canvas:focus {
+  /* remove blue outline around canvas */
+  outline: 0;
+}
+.container-fluid{
+}
+.hud {
+  color: rgb(128,128,128);
+  background-color: transparent;
+  z-index: 99;
+  padding:10px; 
+}
+
+.modal-dialog {
+   position: absolute !important;
+   top: 10px;
+   right: 10px;
+  margin-right:1.75rem !important;
+/*    bottom: 0;
+   left: 0;
+   z-index: 10040;
+   overflow: auto;
+   overflow-y: auto; */
+}
+nav{
+  z-index:100;
+}
