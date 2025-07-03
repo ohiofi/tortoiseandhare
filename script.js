@@ -107,17 +107,20 @@ function draw() {
   // drawText("Z+", "blue", 10);
   // pop();
   updatePlayerMoney();
+  let maxX = player.newTransform.position.x;
   for (let each of objects) {
     each.show();
     if (gameState == "ingame") {
       each.update();
-      if (each.x < 850 && each.x > player.newTransform.position.x - 150){
-        player.newTransform.position.x = each.x + 150
+      
+    }
+    if (each.x < 850 && each.x > maxX - 50){
+        maxX = each.x;
         if (each.x>600){
           player.newTransform.position.z = each.z - 100
         }
       }
-    }
+    
     // place your bet
     if (!betPlaced && each.x >= 500) {
       gameState = "paused";
@@ -129,6 +132,7 @@ function draw() {
       processVictory(each);
     }
   }
+  player.newTransform.position.x = maxX;
   player.update()
 }
 
